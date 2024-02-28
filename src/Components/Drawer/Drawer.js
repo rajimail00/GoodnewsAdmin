@@ -22,7 +22,8 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import { Avatar } from '@mui/material';
-
+import { BrowserRouter, Routes, Route,NavLink   } from "react-router-dom";
+import Ads from '../Ads/Ads'
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -50,7 +51,7 @@ function ResponsiveDrawer(props) {
             <Toolbar />
             <Divider />
             <List>
-                <ListItem disablePadding>
+                <ListItem disablePadding >
                     <ListItemButton>
                         <ListItemIcon>
                             <HomeIcon />
@@ -75,7 +76,7 @@ function ResponsiveDrawer(props) {
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton >
                         <ListItemIcon>
                             <AdsClickIcon />
                         </ListItemIcon>
@@ -192,7 +193,13 @@ function ResponsiveDrawer(props) {
                 }}
             >
                 <Toolbar />
-                <Dashboard />
+                <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/ads" element={<Ads />} />
+         
+        </Routes>
+      </BrowserRouter>
             </Box>
         </Box>
     );
